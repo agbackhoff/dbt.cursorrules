@@ -118,5 +118,9 @@ For more information, see the `tools/gcp_tool_guide.md` file.
 - When searching for recent news, use the current year (2025) instead of previous years, or simply use the "recent" keyword to get the latest information
 - When working with BigQuery, use the google-cloud-bigquery package with service account authentication for secure access to data
 - For tabulating data in the console, the tabulate package provides clean, configurable output formats
+- When extracting nested JSON data in BigQuery, use JSON_EXTRACT_ARRAY and unnest functions together to flatten arrays of objects into rows
+- BigQuery doesn't support the JSON_PRETTY function for formatting JSON output; instead use JSON_EXTRACT functions to extract specific fields
+- When referencing fields between dbt models, ensure field names are consistent (e.g., sale_datetime vs sale_date) across models and their YAML definitions to avoid reference errors
+- Use precise naming for financial calculations: distinguish between 'subtotal' (pre-tax amount) and 'total' (amount including taxes) to avoid confusion and ensure data accuracy
 
 # Scratchpad
